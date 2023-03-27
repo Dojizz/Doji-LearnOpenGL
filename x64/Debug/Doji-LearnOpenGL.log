@@ -1,0 +1,12 @@
+﻿  源.cpp
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(21,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(22,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(26,19): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(27,19): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(28,13): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(29,13): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(48,16): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(59,27): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\glfw_function.h(62,27): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\源.cpp(106,35): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Doji-LearnOpenGL.vcxproj -> D:\Code\LearnCode\LearnOpenGL\Doji-LearnOpenGL\x64\Debug\Doji-LearnOpenGL.exe
