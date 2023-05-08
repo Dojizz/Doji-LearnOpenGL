@@ -2,15 +2,16 @@
 #ifndef GLFW_FUNCTION_H
 #define GLFW_FUNCTION_H
 
+#include "camera.h"
+#include "imgui.h"
+
 extern float transparent;
-extern float cameraSpeed;
-extern glm::vec3 cameraPos;
-extern glm::vec3 cameraFront;
-extern glm::vec3 cameraUp;
 extern float deltaTime;
-extern float pitch, yaw, lastX, lastY, fov;
+extern float lastX, lastY;
+extern Camera mainCamera;
 float sensitivity = 0.05f;
 bool ifMouseFirst = true;
+bool ifCursorDisabled = true;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -28,28 +29,17 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
     lastX = xpos;
     lastY = ypos;
 
+    float pitch = 0, yaw = 0;
+    mainCamera.GetPitchYaw(pitch, yaw);
     pitch += sensitivity * yoffset;
     yaw += sensitivity * xoffset;
-
-    if (pitch > 89.0f)
-        pitch = 89.0f;
-    if (pitch < -89.0f)
-        pitch = -89.0f;
-
-    float camY = sin(glm::radians(pitch));
-    float camX = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
-    float camZ = cos(glm::radians(pitch)) * (-1) * cos(glm::radians(yaw));
-    cameraFront = glm::normalize(glm::vec3(camX, camY, camZ));
-
+    mainCamera.SetPitchYaw(pitch, yaw);
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    if (fov >= 1.0f && fov <= 45.0f)
-        fov -= yoffset;
-    if (fov <= 1.0f)
-        fov = 1.0f;
-    if (fov >= 45.0f)
-        fov = 45.0f;
+    float fov = mainCamera.GetFov();
+    fov -= yoffset;
+    mainCamera.SetFov(fov);
 }
 
 void processInput(GLFWwindow* window) {
@@ -62,18 +52,17 @@ void processInput(GLFWwindow* window) {
         transparent = fmin(1.0, transparent + 0.0001f);
     }
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-        cameraPos += glm::normalize(cameraFront) * cameraSpeed * deltaTime;
+        mainCamera.MoveCam(Camera::Direction::FORWARD, deltaTime);
     }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-        cameraPos += glm::normalize(glm::cross(cameraUp, cameraFront)) * cameraSpeed * deltaTime;
+        mainCamera.MoveCam(Camera::Direction::LEFT, deltaTime);
     }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-        cameraPos -= glm::normalize(glm::cross(cameraUp, cameraFront)) * cameraSpeed * deltaTime;
+        mainCamera.MoveCam(Camera::Direction::RIGHT, deltaTime);
     }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-        cameraPos -= glm::normalize(cameraFront) * cameraSpeed * deltaTime;
-    }
-        
+        mainCamera.MoveCam(Camera::Direction::BACK, deltaTime);
+    } 
 }
 
 
@@ -91,6 +80,7 @@ GLFWwindow* initGLFW(int major_version = 3, int minor_version = 3, int width = 8
     }
     else {
         glfwMakeContextCurrent(window);
+        glfwSwapInterval(1); // Enable vsync
     }
     return window;
 }

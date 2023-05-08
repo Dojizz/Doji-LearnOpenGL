@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\imgui">
+      <UniqueIdentifier>{f254bd88-fafa-45d4-ab30-361548ac7937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\imgui">
+      <UniqueIdentifier>{6eb74fde-851c-44a5-bb54-a152364f0bf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\images">
+      <UniqueIdentifier>{4b7ed64c-83f1-4fa6-94c0-95e782c05f29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\SoftwarePackage\glad\src\glad.c">
@@ -23,6 +32,27 @@
     </ClCompile>
     <ClCompile Include="stb_image.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_glfw.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_opengl3.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>源文件\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +74,45 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_glfw.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_opengl3.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_opengl3_loader.h">
+      <Filter>头文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="defaultVertexShader.vert">
@@ -52,16 +121,46 @@
     <None Include="defaultFragmentShader.frag">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="basicShader.vert">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="lightingShader.frag">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="lightShader.frag">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="gouraud.vert">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="gouraud.frag">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="nanosuitShader.frag">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="nanosuitShader.vert">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="C:\Users\dojizz\Desktop\container.jpg">
-      <Filter>资源文件</Filter>
+    <Image Include="resources\images\container2.png">
+      <Filter>资源文件\images</Filter>
     </Image>
-    <Image Include="C:\Users\dojizz\Desktop\planet.jpg">
-      <Filter>资源文件</Filter>
+    <Image Include="resources\images\container2_specular.png">
+      <Filter>资源文件\images</Filter>
     </Image>
-    <Image Include="C:\Users\dojizz\Desktop\awesomeface.png">
-      <Filter>资源文件</Filter>
+    <Image Include="resources\images\planet.jpg">
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="resources\images\awesomeface.png">
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="resources\images\container.jpg">
+      <Filter>资源文件\images</Filter>
+    </Image>
+    <Image Include="resources\images\lighting_maps_specular_color.png">
+      <Filter>资源文件\images</Filter>
     </Image>
   </ItemGroup>
 </Project>

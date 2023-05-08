@@ -44,7 +44,7 @@ public:
 	void SetInt(const std::string& name, int value);
 	void SetFloat(const std::string& name, float value);
 	void SetMat4fv(const std::string& name, glm::mat4 trans);
-
+	void SetVec3(const std::string& name, glm::vec3 v);
 };
 
 unsigned int ShaderProgram::CompileShader(std::string source, ShaderType type) {
@@ -153,6 +153,10 @@ void ShaderProgram::SetInt(const std::string& name, int value) {
 }
 void ShaderProgram::SetFloat(const std::string& name, float value) {
 	glUniform1f(glGetUniformLocation(programId, name.c_str()), value);
+}
+
+void ShaderProgram::SetVec3(const std::string& name, glm::vec3 v) {
+	glUniform3f(glGetUniformLocation(programId, name.c_str()), v.x, v.y, v.z);
 }
 
 void ShaderProgram::SetMat4fv(const std::string& name, glm::mat4 trans) {
